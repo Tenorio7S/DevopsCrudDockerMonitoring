@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionar Restaurante</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 50px;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    input, button {
+      display: block;
+      margin: 10px 0;
+    }
+    .message {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Adicionar Restaurante</h1>
+  <form id="restauranteForm">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
+    
+    <label for="tipo">Tipo:</label>
+    <input type="text" id="tipo" name="tipo" required>
+    
+    <label for="preco">Preço:</label>
+    <input type="number" id="preco" name="preco" required>
+    
+    <button type="submit">Adicionar Restaurante</button>
+  </form>
+  <div id="message" class="message"></div>
+
+
+  <h2>Lista de Restaurantes</h2>
+  <button id="loadRestaurantes">Carregar Restaurantes</button>
+  <table id="restaurantesTable">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Tipo</th>
+        <th>Preço</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Lista de restaurantes será inserida aqui -->
+    </tbody>
+  </table>
+
+
+  <script src="app.js"></script>
+</body>
+</html>
