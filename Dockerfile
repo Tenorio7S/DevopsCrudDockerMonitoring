@@ -15,6 +15,5 @@ COPY . .
 # Exponha a porta em que o aplicativo irá rodar
 EXPOSE 3000
 
-# Comando para iniciar o aplicativo quando o contêiner for iniciado
-CMD ["node", "app.js"]
-
+# Comando para iniciar o aplicativo usando nodemon quando o contêiner for iniciado
+CMD ["npm", "run", "dev"]
