@@ -1,9 +1,14 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
 
-const DB_PASSWORD = 'zkUpgpPDv1sq72O5';
+dotenv.config();
+
+const DB_PASSWORD = process.env.DB_PASSWORD;
+const DB_NAME = process.env.DB_NAME;
+const DB_HOST = process.env.DB_HOST;
 
 const conectaNaDatabase = () => {
-  mongoose.connect(`mongodb+srv://tenorio:${DB_PASSWORD}@cluster0.19cyclg.mongodb.net/restaurante?retryWrites=true&w=majority`, 
+  mongoose.connect(`mongodb+srv://tenorio:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority`, 
   {
     useNewUrlParser: true,
     useUnifiedTopology: true

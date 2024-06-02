@@ -1,8 +1,26 @@
-version: '3'
+version: '3.9'
 services:
   web:
     build: .
     ports:
       - "3000:3000"
     volumes:
-      - ./src:/app/src
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      - NODE_ENV=development
+      - DB_PASSWORD=zkUpgpPDv1sq72O5
+      - DB_NAME=restaurante
+      - DB_HOST=cluster0.19cyclg.mongodb.net
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:

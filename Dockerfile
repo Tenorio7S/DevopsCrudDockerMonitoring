@@ -1,19 +1,20 @@
+# Use a imagem oficial do Node.js como base
 FROM node:latest
 
-# Cria o diretório de trabalho dentro do contêiner
-WORKDIR /app
+# Defina o diretório de trabalho dentro do container
+WORKDIR /usr/src/app
 
-# Copia os arquivos package.json e package-lock.json para o diretório de trabalho do contêiner
+# Copie o package.json e o package-lock.json para o diretório de trabalho
 COPY package*.json ./
 
-# Instala as dependências do projeto
+# Instale as dependências
 RUN npm install
 
-# Copia o restante dos arquivos do projeto para o diretório de trabalho do contêiner
+# Copie o resto do código para o diretório de trabalho
 COPY . .
 
-# Exponha a porta em que o aplicativo irá rodar
+# Exponha a porta em que o servidor Express irá escutar
 EXPOSE 3000
 
-# Comando para iniciar o aplicativo usando nodemon quando o contêiner for iniciado
+# Comando para iniciar o servidor em modo de desenvolvimento
 CMD ["npm", "run", "dev"]
