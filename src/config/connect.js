@@ -1,11 +1,8 @@
 import mongoose from "mongoose";
-import dotenv from "dotenv";
 
-dotenv.config();
-
-const DB_PASSWORD = process.env.DB_PASSWORD;
-const DB_NAME = process.env.DB_NAME;
-const DB_HOST = process.env.DB_HOST;
+const DB_PASSWORD = 'zkUpgpPDv1sq72O5';
+const DB_HOST = 'cluster0.19cyclg.mongodb.net';
+const DB_NAME = 'restaurante';
 
 const conectaNaDatabase = () => {
   mongoose.connect(`mongodb+srv://tenorio:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}?retryWrites=true&w=majority`, 

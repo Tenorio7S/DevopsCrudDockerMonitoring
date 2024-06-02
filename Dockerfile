@@ -7,8 +7,8 @@ WORKDIR /usr/src/app
 # Copie o package.json e o package-lock.json para o diretório de trabalho
 COPY package*.json ./
 
-# Instale as dependências
-RUN npm install
+# Instale as dependências, incluindo o cliente MongoDB
+RUN npm install mongodb
 
 # Copie o resto do código para o diretório de trabalho
 COPY . .
