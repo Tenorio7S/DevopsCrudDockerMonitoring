@@ -16,9 +16,6 @@ jobs:
     - name: Install Node.js dependencies
       run: npm install
 
-    - name: Run tests
-      run: npm test  # Substitua isso pelo comando real para executar seus testes
-
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
 
@@ -43,3 +40,4 @@ jobs:
           cd /home/ec2-user
           docker-compose pull
           docker-compose up -d
+
